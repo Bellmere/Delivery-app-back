@@ -1,5 +1,5 @@
-const { Contact } = require("./contact");
+const Menu = require("./menu");
 
 module.exports = {
-  Contact,
+  Menu
 };
