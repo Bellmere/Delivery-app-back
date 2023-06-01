@@ -12,6 +12,35 @@ const Joi = require('joi');
     ).required(),
   });
 
+  const contactJoiSchema = Joi.object({
+    name: Joi.string().messages({
+      'any.required': 'Please provide a name for the contact',
+    }),
+    email: Joi.string().email().messages({
+      'any.required': 'Please provide an email',
+      'string.email': 'Please provide a valid email',
+    }),
+    phone: Joi.string().messages({
+      'any.required': 'Please provide a phone number',
+    }),
+    address: Joi.string().messages({
+      'any.required': 'Please provide an address',
+    }),
+    basketItems: Joi.array()
+      .items(
+        Joi.object({
+          _id: Joi.string(),
+          name: Joi.string(),
+          price: Joi.number(),
+          src: Joi.string(),
+          quantity: Joi.number(),
+        })
+      )
+      ,
+    total: Joi.number(),
+  });
+
   module.exports = {
-    menuJoiSchema
+    menuJoiSchema,
+    contactJoiSchema
   }

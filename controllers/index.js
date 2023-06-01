@@ -1,5 +1,7 @@
 const menu = require("./menu");
+const order = require("./order");
 
 module.exports = {
-    menu
+    menu,
+    order
 };
