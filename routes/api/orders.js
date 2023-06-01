@@ -1,6 +1,6 @@
 const express = require('express');
 
-const {validateBody} = require("../../middlewares/validation")
+const { validateBody } = require("../../middlewares")
 const { contactJoiSchema } = require('../../utils/validation/menu/ValidationSchemas');
 const { order: ctrl } = require('../../controllers/');
 const { addOrder } = ctrl;
