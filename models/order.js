@@ -19,7 +19,7 @@ const orderSchema = Schema({
   },
   basketItems: [
     {
-      _id: {
+      id: {
         type: String,
       },
       name: {
